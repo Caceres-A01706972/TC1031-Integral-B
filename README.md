@@ -10,3 +10,19 @@ El Analisis de Complejidad de este algoritmo es de O(n^2) ya que se debe de crea
 <li>addEdgeAdjMat()</li>
 El Analisis de Complejidad de este algoritmo es de O(1) si las vertices ya fueron creadas anteriormente en el constructor de Graph(n) donde n es el numero de nodos.
 <br></br>
+
+<li>DFS()</li>
+Para este algoritmo, el analisis de complejidad se tiene que tomar en cuenta la cantidad de vertices y edges que se visitaran. Es por esto que el analisis de complejidad es de O(v) + O(e) donde v es el numero de vertices y e es el numero de edges.
+<br></br>
+
+<li>BFS()</li>
+Este algoritmo tiene un Analisis de Complejidad es el mismo al del algoritmo de DFS, ya que se tendra que visitar una cierta cantidad de vertices y edges. Es decir, O(v) + O(a).
+<br></br>
+
+<li>printShortestDistance()</li>
+El Analisis de Complejidad de este algoritmo seria de O(n) en el peor de los casos, ya que esta funcion solo se encarga de ir imprimiendo lo que hay en el arreglo de distancia y de path.
+<br></br>
+
+<li>get()</li>
+Para este algoritmo, el analisis de complejidad se tiene que tomar en cuenta que podria llegar a tener que recorrer toda la tabla para encontrar el value de key. Por lo que el analisis de complejidad tendria que ser de O(n) en el peor de los casos.
+<br></br>
