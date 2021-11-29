@@ -1,6 +1,6 @@
 <h1>CORRECIONES</h1>
 
-El programa ya compila, tiene los archivos correctos para compilar.
+El programa ya compila, tiene los archivos correctos para compilar. <br>
 El programa implementa lectura y escritura de archivos.
 
 <h1>Sistema de Vuelos Internacionales</h1>
