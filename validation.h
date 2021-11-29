@@ -1,7 +1,7 @@
 /*
     Ricardo Andres Caceres Villibord
     A01706972
-    Archivo para hacer validacion de numero a pais.
+    Archivo de la Integral B para hacer validacion de numero a pais.
 */
 
 #include <string>
@@ -68,6 +68,10 @@ string validation(int code){
     }
 
 }
+
+
+
+
 
 
 /*
