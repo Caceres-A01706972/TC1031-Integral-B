@@ -1,0 +1,12 @@
+Pasajero: Ricardo
+From: MEX
+To: VEN
+Tipo de Ruta: Rapida
+ 
+Pasajero: MARIA
+From: HON
+To: VEN
+Tipo de Ruta: Aventurera
+ 
+
+ 
