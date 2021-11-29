@@ -10,90 +10,114 @@
 #include <algorithm>
 
 #include "algorithms.h"
+#include "hash.h"
+#include "reverse_validation.h"
 
 using namespace std;
+
+unsigned int myHash(const string s) {
+	unsigned int acum = 0;
+	for (unsigned int i = 0; i < s.size(); i++) {
+		acum += (int) s[i];
+	}
+	return acum;
+}
 
 int main(){
 
     bool continua = true;
     int resp;
+    Graph g;
+    g.loadGraphMat("rutas.txt", 10, 10);
+    g.loadGraphList("rutas.txt", 10, 10);
+    
+    HashTable<string, int> hash(20, string("empty"), myHash);
 
-    int num_countries = 11;
-    Graph g(num_countries);
-
-    g.addEdgeAdjMatrix(0,8);
-    g.addEdgeAdjMatrix(0,6);
-    g.addEdgeAdjMatrix(0,7);
-    g.addEdgeAdjMatrix(0,10);
-
-    g.addEdgeAdjMatrix(1,7);
-
-    g.addEdgeAdjMatrix(2, 7);
-    g.addEdgeAdjMatrix(2,6);
-
-    g.addEdgeAdjMatrix(3, 6);
-    g.addEdgeAdjMatrix(3, 4);
-    g.addEdgeAdjMatrix(3, 5);
-    g.addEdgeAdjMatrix(3, 8);
-
-    g.addEdgeAdjMatrix(4, 7);
-    g.addEdgeAdjMatrix(4,3);
-
-    g.addEdgeAdjMatrix(5,7);
-    g.addEdgeAdjMatrix(5,3);
-
-    g.addEdgeAdjMatrix(6,2);
-    g.addEdgeAdjMatrix(6,0);
-    g.addEdgeAdjMatrix(6,3);
-
-    g.addEdgeAdjMatrix(7,0);
-    g.addEdgeAdjMatrix(7,2);
-    g.addEdgeAdjMatrix(7,1);
-    g.addEdgeAdjMatrix(7,5);
-    g.addEdgeAdjMatrix(7,4);
-    g.addEdgeAdjMatrix(7,3);
-
-    g.addEdgeAdjMatrix(8,0);
-    g.addEdgeAdjMatrix(8,9);
-    g.addEdgeAdjMatrix(8,10);
-
-    g.addEdgeAdjMatrix(9,8);
-
-    g.addEdgeAdjMatrix(10,8);
-    g.addEdgeAdjMatrix(10,0);
-
+   
     while(continua){
+        string nombre;
+        string start;
+        string destino;
+        string ruta;
+        int pasaporte;
 
         cout<<"\nMENU"<<endl;
         cout<<"=========\n";
         cout<<"1. Ver lista de Vuelos"<<endl;
-        cout<<"2. Exit"<<endl;
+        cout<<"2. Buscar Ruta Aventurera"<<endl;
+        cout<<"3. Buscar Ruta Rapida"<<endl;
+        cout<<"4. Comprar Boleto"<<endl;
+        cout<<"5. Opcion Exclusiva para Administrador"<<endl;
+        cout<<"6. Exit"<<endl;
         cin>>resp;
 
         if (resp == 1){
             cout<<g.printAdjMat_clean();
+
         } else if (resp == 2){
+            cout<<"Ingesa el pais de donde sales (ejemplo: MEX):  "<<endl;
+            cin>>start;
+            cout<<"Ingresa el pais de destino (ejemplo: ESA): "<<endl;
+            cin>>destino;
+            cout<<g.DFS(reverse_validation(start), reverse_validation(destino));
+
+        } else if (resp == 3){
+            cout<<"Ingesa el pais de donde sales (ejemplo: MEX):  "<<endl;
+            cin>>start;
+            cout<<"Ingresa el pais de destino (ejemplo: ESA): "<<endl;
+            cin>>destino;
+            g.printShortestDistance(reverse_validation(start), reverse_validation(destino), 10);
+
+        } else if (resp == 4){
+            cout<<"Ingresa el nombre del pasajero: "<<endl;
+            cin>>nombre;
+            cout<<"Ingesa el pais de donde sales (ejemplo: MEX):  "<<endl;
+            cin>>start;
+            cout<<"Ingresa el pais de destino (ejemplo: ESA): "<<endl;
+            cin>>destino;
+            cout<<"Desea la Ruta Rapida (1) o la Ruta Aventurera (2)"<<endl;
+            cin>>resp;
+            cout<<"Ingresa tu numero de pasaporte: "<<endl;
+            cin>>pasaporte;
+            hash.put(string(nombre), pasaporte);
+            if (resp == 1){
+                ruta = "Rapida";
+                cout<<"La Ruta de tu viaje sera la siguiente: "<<endl;
+                g.printShortestDistance(reverse_validation(start), reverse_validation(destino), 10);
+            } else if (resp == 2){
+                ruta = "Aventurera";
+                cout<<g.DFS(reverse_validation(start), reverse_validation(destino));
+            }
+            write_to_file(nombre, start, destino, ruta);
+            cout<<"\nPasaje Comprado Exitosamente"<<endl;
+
+        } else if (resp == 5){
+            cout<<"Para esta opcion debes ser un administrador, ingresa contrasenia de administrador (contrasenia: 123456): "<<endl;
+            cin>> resp;
+            if (resp == 123456){
+                cout<<"\nMenu de Administrador"<<endl;
+                cout<<"1. Ver Pasaporte de pasajero"<<endl;
+                cout<<"2. Ver Tabla de Pasajeros y sus Pasaportes"<<endl;
+                cin>> resp;
+                if(resp == 1){
+                    cout<<"Ingresa el nombre del pasajero: "<<endl;
+                    cin>> nombre;
+                    cout<<hash.get(nombre);
+                } else if (resp == 2){
+                    cout<<hash.toString();
+                }
+            } else if (resp != 123456){
+                cout<<"Contrasenia Incorrecta";
+            }
+        } else if (resp == 6){
             break;
         }
     }
-
+    
 
     return 0;
 }
 
 
 
- /*
-    char text[200];
-
-    fstream file;
-    file.open("example.txt", ios::out | ios::in);
-
-    cout<<"Write text to be written: "<<endl;
-    cin.getline(text, sizeof(text));
-    file<<text<<endl;
-
-    return 0;
-
-}*/
 
