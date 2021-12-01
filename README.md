@@ -1,10 +1,10 @@
 <h1>CORRECIONES</h1>
-<li>SICT0302B</li>
+<li>SICT0302B Toma descisiones</li>
 El programa ya compila, tiene los archivos correctos para compilar. <br>
 Y hace uso de grafos para el analisis de información. (Para ver conexiones de vuelos)
 Y usa un algoritmo de búsqueda en grafos para resolver un problema. (Para buscar la ruta)
 
-<li>SICT0303B</li>
+<li>SICT0303B Implementa acciones cientificas</li>
 El programa implementa lectura y escritura de archivos.
 
 <h1>Sistema de Vuelos Internacionales</h1>
