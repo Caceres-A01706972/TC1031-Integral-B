@@ -1,12 +1,12 @@
 <h1>CORRECIONES</h1>
-<li><h4>SICT0302B Toma descisiones</h4></li>
+<li>SICT0302B Toma descisiones</li>
 El programa ya compila, tiene los archivos correctos para compilar. <br>
 Y hace uso de grafos para el analisis de información. (Para ver conexiones de vuelos)
 Y usa un algoritmo de búsqueda en grafos para resolver un problema. (Para buscar la ruta)
-
+<br></br>
 <li>SICT0303B Implementa acciones cientificas</li>
 El programa implementa lectura y escritura de archivos.
-
+<br></br>
 <h1>Sistema de Vuelos Internacionales</h1>
 
 Este proyecto se basa en un sistema en el que se tiene una serie de aeropuertos, se hace uso de grafos para poder mapear de donde a donde es posible viajar. Es decir desde que aeropuerto se puede llegar a que otro aeropueerto. De la misma manera el usuario puede hacer una busqueda para ver dos tipos de rutas a su destino. La Ruta aventurera que le da la mayor cantidad de pais que puede visitar en su viaje. Y la Ruta Rapida, la cual le da el camino mas corto a su destino.
