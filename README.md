@@ -1,5 +1,5 @@
 <h1>CORRECIONES</h1>
-<li>**bold text**SICT0302B Toma descisiones</li>
+<li><h4>SICT0302B Toma descisiones</h4></li>
 El programa ya compila, tiene los archivos correctos para compilar. <br>
 Y hace uso de grafos para el analisis de información. (Para ver conexiones de vuelos)
 Y usa un algoritmo de búsqueda en grafos para resolver un problema. (Para buscar la ruta)
