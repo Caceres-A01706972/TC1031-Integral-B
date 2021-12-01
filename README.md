@@ -1,7 +1,7 @@
 <h1>CORRECIONES</h1>
 <li>SICT0302B Toma descisiones</li>
 El programa ya compila, tiene los archivos correctos para compilar. <br>
-Y hace uso de grafos para el analisis de información. (Para ver conexiones de vuelos)
+Y hace uso de grafos para el analisis de información. (Para ver conexiones de vuelos).<br>
 Y usa un algoritmo de búsqueda en grafos para resolver un problema. (Para buscar la ruta)
 <br></br>
 <li>SICT0303B Implementa acciones cientificas</li>
@@ -36,3 +36,11 @@ El Analisis de Complejidad de este algoritmo seria de O(n) en el peor de los cas
 <li>get()</li>
 Para este algoritmo, el analisis de complejidad se tiene que tomar en cuenta que podria llegar a tener que recorrer toda la tabla para encontrar el value de key. Por lo que el analisis de complejidad tendria que ser de O(n) en el peor de los casos.
 <br></br>
+
+<li>put()</li>
+El Analisis de Complejidad de este algoritmo seria de O(n) en el peor de los casos, ya que se podrian encontrar varias colisiones. Entonces se tendria que tomar en cuenta el tamanio de la lista.
+<br></br>
+
+<li>set.insert()</li>
+El Analisis de Complejidad de este algoritmo seria de O(log n) en el peor de los casos, esto se debe a que el set esta implementado en la libreria de c++ como un balaced tree, es por eso que se permite tener un ordern entre los elementos.
+
