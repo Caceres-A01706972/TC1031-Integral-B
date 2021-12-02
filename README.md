@@ -15,9 +15,9 @@ El usuario puede hacer la compra de un boleto, al hacer la compra su ticket se e
 <h2>SEG0702A Tecnologias de Vanguardia </h2>
 Se hace uso de la estructura de Sets, la cual no se vio durante el curso. <br>
 El usuario al comprar un boleto puede seleccionar el asiento que desea ocupar durante el vuelo. Los asientos disponibles estan siendo manejados a traves de la estructura de sets. Al principio del programa se hace uso de la funcion de insert() para poder insertar en el set los asientos que estan disponibles. Luego a traves de un iterador, se le muestra a el usuario los asientos disponibles que estan en el set. Luego el usuario elige el asiento que desea comprar, y se hace la operacion de erase() en el set para borrar ese asiento de la lista de asientos disponibles. Asi cuando se quiera comprar otro boleto, el set de asientos disponibles ya no va a tener ese asiento disponible, porque fue borrado del set. A continuacion se muestra un ejemplo de esta operacion.<br>
-![image](https://user-images.githubusercontent.com/83652905/144356187-cb178e3c-9fbb-4b35-8931-de3c2d5ecb15.png)
+<img src="https://user-images.githubusercontent.com/83652905/144356187-cb178e3c-9fbb-4b35-8931-de3c2d5ecb15.png"> <br>
 Ahora al querer comprar otro boleto, el asiento 17 ya no esta en el set. 
-![image](https://user-images.githubusercontent.com/83652905/144356100-fd9c8130-86f7-4504-919a-2f052237859b.png)
+<img src= "https://user-images.githubusercontent.com/83652905/144356100-fd9c8130-86f7-4504-919a-2f052237859b.png"> <br>
 
 
 <h2>Analisis de Complejidad</h2>
